@@ -125,10 +125,12 @@ export const ConversationPanel = (props) => {
   } = messagesStore;
   const { isFrozen, isBroadcast, isSuper } = currentGroupChannel;
   const { appInfo = {} } = sdk;
-  const usingReaction = (
-    appInfo.isUsingReaction && !isBroadcast && !isSuper && useReaction
-    // TODO: Make useReaction independent from appInfo.isUsingReaction
-  );
+  // const usingReaction = (
+  //   appInfo.isUsingReaction && !isBroadcast && !isSuper && useReaction
+  //   // TODO: Make useReaction independent from appInfo.isUsingReaction
+  // );
+  // we have remove below stmt once ws is up and uncomment up block
+  const usingReaction = false;
 
   const userDefinedDisableUserProfile = disableUserProfile || config.disableUserProfile;
   const userDefinedRenderProfile = renderUserProfile || config.renderUserProfile;

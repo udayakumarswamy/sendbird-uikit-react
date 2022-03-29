@@ -11,7 +11,7 @@ import './index.scss';
 import Avatar from '../Avatar';
 import UserProfile from '../UserProfile';
 import MessageStatus from '../MessageStatus';
-import MessageItemMenu from '../MessageItemMenu';
+// import MessageItemMenu from '../MessageItemMenu';
 import MessageItemReactionMenu from '../MessageItemReactionMenu';
 import ContextMenu, { MenuItems } from '../ContextMenu';
 import Label, { LabelTypography, LabelColors } from '../Label';
@@ -142,7 +142,7 @@ export default function MessageContent({
         {/* outgoing menu */}
         {isByMe && (
           <div className={getClassName(['sendbird-message-content-menu', useReactionClassName, supposedHoverClassName, isByMeClassName])}>
-            <MessageItemMenu
+            {/* <MessageItemMenu
               className="sendbird-message-content-menu__normal-menu"
               channel={channel}
               message={message as UserMessage | FileMessage}
@@ -154,7 +154,7 @@ export default function MessageContent({
               resendMessage={resendMessage}
               setQuoteMessage={setQuoteMessage}
               setSupposedHover={setSupposedHover}
-            />
+            /> */}
             {useReaction && (
               <MessageItemReactionMenu
                 className="sendbird-message-content-menu__reaction-menu"
@@ -286,18 +286,20 @@ export default function MessageContent({
         {!isByMe && (
           <div className={getClassName(['sendbird-message-content-menu', chainTopClassName, supposedHoverClassName, isByMeClassName])}>
             {useReaction && (
-              <MessageItemReactionMenu
-                className="sendbird-message-content-menu__reaction-menu"
-                message={message as UserMessage | FileMessage}
-                channel={channel}
-                userId={userId}
-                spaceFromTrigger={{}}
-                emojiContainer={emojiContainer}
-                toggleReaction={toggleReaction}
-                setSupposedHover={setSupposedHover}
-              />
+              <>
+                <MessageItemReactionMenu
+                  className="sendbird-message-content-menu__reaction-menu"
+                  message={message as UserMessage | FileMessage}
+                  channel={channel}
+                  userId={userId}
+                  spaceFromTrigger={{}}
+                  emojiContainer={emojiContainer}
+                  toggleReaction={toggleReaction}
+                  setSupposedHover={setSupposedHover}
+                />
+              </>
             )}
-            <MessageItemMenu
+            {/* <MessageItemMenu
               className="sendbird-message-content-menu__normal-menu"
               channel={channel}
               message={message as UserMessage | FileMessage}
@@ -309,7 +311,7 @@ export default function MessageContent({
               resendMessage={resendMessage}
               setQuoteMessage={setQuoteMessage}
               setSupposedHover={setSupposedHover}
-            />
+            /> */}
           </div>
         )}
       </div>
