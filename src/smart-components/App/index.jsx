@@ -10,7 +10,7 @@ import Sendbird from '../../lib/Sendbird';
 
 import ChannelList from '../ChannelList';
 import Conversation from '../Conversation';
-import ChannelSettings from '../ChannelSettings';
+// import ChannelSettings from '../ChannelSettings';
 import MessageSearchPannel from '../MessageSearch/messageSearchPannel';
 
 import './index.scss';
@@ -89,7 +89,7 @@ export default function App(props) {
             channelUrl={currentChannelUrl}
             onChatHeaderActionClick={() => {
               setShowSearch(false);
-              setShowSettings(!showSettings);
+              // setShowSettings(!showSettings);
             }}
             onSearchClick={() => {
               setShowSettings(false);
@@ -103,7 +103,7 @@ export default function App(props) {
             useMessageGrouping={useMessageGrouping}
           />
         </div>
-        {showSettings && (
+        {/* {showSettings && (
           <div className="sendbird-app__settingspanel-wrap">
             <ChannelSettings
               className="sendbird-channel-settings"
@@ -113,7 +113,7 @@ export default function App(props) {
               }}
             />
           </div>
-        )}
+        )} */}
         {showSearch && (
           <div className="sendbird-app__searchpanel-wrap">
             <MessageSearchPannel

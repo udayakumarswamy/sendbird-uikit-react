@@ -79,7 +79,7 @@ export default function ChatHeader(props) {
             </IconButton>
           )
         }
-        <IconButton
+        {/* <IconButton
           className="sendbird-chat-header__right__info"
           width="32px"
           height="32px"
@@ -91,7 +91,7 @@ export default function ChatHeader(props) {
             width="24px"
             height="24px"
           />
-        </IconButton>
+        </IconButton> */}
       </div>
     </div>
   );
