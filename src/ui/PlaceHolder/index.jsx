@@ -150,7 +150,7 @@ export default function PlaceHolder({
                     type={LabelTypography.BUTTON_2}
                     color={LabelColors.PRIMARY}
                   >
-                    {`'${searchInString}`}
+                    {/* {`'${searchInString}`} */}
                   </Label>
                   <Label
                     className="sendbird-place-holder__body--align-top__text__quote"

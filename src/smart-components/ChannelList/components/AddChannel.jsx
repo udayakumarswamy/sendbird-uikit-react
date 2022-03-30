@@ -12,8 +12,8 @@ import InviteMembers from '../../InviteMembers';
 import {
   createChannel,
   createDefaultUserListQuery,
-  isBroadcastChannelEnabled,
-  isSuperGroupChannelEnabled,
+  // isBroadcastChannelEnabled,
+  // isSuperGroupChannelEnabled,
 } from './utils';
 import { CREATE_CHANNEL } from '../dux/actionTypes';
 import Modal from '../../../ui/Modal';
@@ -28,7 +28,7 @@ export default function AddChannel({
   userListQuery,
 }) {
   const [showModal, setShowModal] = useState(false);
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
   const [type, setType] = useState('group');
   const { stringSet } = useContext(LocalizationContext);
 
@@ -36,8 +36,8 @@ export default function AddChannel({
     return null;
   }
 
-  const isBroadcastAvailable = isBroadcastChannelEnabled(sdk);
-  const isSupergroupAvailable = isSuperGroupChannelEnabled(sdk);
+  // const isBroadcastAvailable = isBroadcastChannelEnabled(sdk);
+  // const isSupergroupAvailable = isSuperGroupChannelEnabled(sdk);
 
   return (
     <>
@@ -59,7 +59,7 @@ export default function AddChannel({
       {
         showModal && step === 0 && (
           <Modal
-            titleText={stringSet.MODAL__CHOOSE_CHANNEL_TYPE__TITLE}
+            titleText={stringSet.MODAL__CHOOSE_CHANNEL_TYPE__INVITE}
             hideFooter
             onCancel={() => { setShowModal(false); }}
             onSubmit={() => { }}
@@ -89,7 +89,31 @@ export default function AddChannel({
                   {stringSet.MODAL__CHOOSE_CHANNEL_TYPE__GROUP}
                 </Label>
               </div>
-              {
+              {/* <div
+                className="sendbird-add-channel__rectangle"
+                onClick={() => {
+                  setType('group');
+                  setStep(1);
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={() => {
+                  setType('group');
+                  setStep(1);
+                }}
+              >
+                <Icon
+                  className="sendbird-add-channel__rectangle__chat-icon"
+                  type={IconTypes.CHAT}
+                  fillColor={IconColors.PRIMARY}
+                  width="28px"
+                  height="28px"
+                />
+                <Label type={LabelTypography.SUBTITLE_1} color={LabelColors.ONBACKGROUND_1}>
+                  {stringSet.MODAL__CHOOSE_CHANNEL_TYPE__GROUP}
+                </Label>
+              </div> */}
+              {/* {
                 isSupergroupAvailable && (
                   <div
                     className="sendbird-add-channel__rectangle"
@@ -116,8 +140,8 @@ export default function AddChannel({
                     </Label>
                   </div>
                 )
-              }
-              {
+              } */}
+              {/* {
                 isBroadcastAvailable && (
                   <div
                     className="sendbird-add-channel__rectangle"
@@ -144,7 +168,7 @@ export default function AddChannel({
                     </Label>
                   </div>
                 )
-              }
+              } */}
             </div>
           </Modal>
         )
@@ -156,9 +180,9 @@ export default function AddChannel({
               sdk && sdk.getErrorFirstCallback && sdk.getErrorFirstCallback()
             }
             titleText={stringSet.MODAL__CREATE_CHANNEL__TITLE}
-            submitText={stringSet.BUTTON__CREATE}
+            submitText={stringSet.BUTTON__INVITE}
             closeModal={() => {
-              setStep(0);
+              // setStep(0);
               setShowModal(false);
             }}
             idsToFilter={[userId]}

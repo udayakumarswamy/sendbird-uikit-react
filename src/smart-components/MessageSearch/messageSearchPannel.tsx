@@ -62,7 +62,7 @@ function MessageSearchPannel(props: Props): JSX.Element {
           type={LabelTypography.H_2}
           color={LabelColors.ONBACKGROUND_1}
         >
-          {stringSet.SEARCH_IN_CHANNEL}
+          {stringSet.SEARCH_FOR_MESSAGES}
         </Label>
         <IconButton
           className={`${COMPONENT_CLASS_NAME}__header__close-button`}

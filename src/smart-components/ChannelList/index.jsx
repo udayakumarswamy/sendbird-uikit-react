@@ -285,22 +285,24 @@ function ChannelList(props) {
                     </div>
                   )
                   : (
-                    <ChannelPreview
-                      key={channel.url}
-                      tabIndex={idx}
-                      onClick={onClick}
-                      channel={channel}
-                      currentUser={user}
-                      theme={theme}
-                      isActive={channel.url === currentChannel}
-                      // todo - potential performance hit refactor
-                      ChannelAction={(
-                        <ChannelPreviewAction
-                          disabled={!isOnline}
-                          onLeaveChannel={() => onLeaveChannel(channel)}
-                        />
-                      )}
-                    />
+                    <>
+                      <ChannelPreview
+                        key={channel.url}
+                        tabIndex={idx}
+                        onClick={onClick}
+                        channel={channel}
+                        currentUser={user}
+                        theme={theme}
+                        isActive={channel.url === currentChannel}
+                        // todo - potential performance hit refactor
+                        // ChannelAction={(
+                        //   <ChannelPreviewAction
+                        //     disabled={!isOnline}
+                        //     onLeaveChannel={() => onLeaveChannel(channel)}
+                        //   />
+                        // )}
+                      />
+                    </>
                   )
               );
             })

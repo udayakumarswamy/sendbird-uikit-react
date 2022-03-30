@@ -126,7 +126,7 @@ InviteMembers.propTypes = {
 };
 InviteMembers.defaultProps = {
   swapParams: false,
-  submitText: 'create',
+  submitText: 'Invite',
   titleText: 'Create new channel',
   idsToFilter: [],
 };
